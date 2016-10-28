@@ -1,4 +1,4 @@
-A small program desmontrating multi-threading.
+A small program desmontrating multi-threading for CS351.
 Requirements:
 Main thread of program must start up two worker threads. 
 Each worker thread must independently walk the Fibonacci sequence (1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...). 
