@@ -23,6 +23,9 @@ public class FibonacciWalk
       step++;
     }
 
+    /**
+     * overrides the run method
+     */
     public void run()
     {
       for (; flag;)
@@ -46,9 +49,12 @@ public class FibonacciWalk
         }
 
       }
-      System.out.println(NAME + " is signning out!");
+      System.out.println(NAME + " is signing out!");
     }
 
+    /**
+     * reports the name and step and active number of the thread.
+     */
     synchronized public void reportStatus()
     {
       System.out.print(NAME);
@@ -57,16 +63,20 @@ public class FibonacciWalk
       System.out.println();
     }
 
+    /**
+     * tells the thread to stop.
+     */
     public void end()
     {
       flag = false;
     }
   }
 
+ 
+
   public static void main(String[] args)
   {
     // TODO Auto-generated method stub
-
     WorkerThread th1 = new WorkerThread("worker thread 1");
     WorkerThread th2 = new WorkerThread("worker thread 2");
     th1.start();
@@ -88,7 +98,6 @@ public class FibonacciWalk
     th1.end();
     th2.end();
 
-    
     while (th1.isAlive() || th2.isAlive())
     {
       System.out.println("Worker threads are not completely stopped!");
